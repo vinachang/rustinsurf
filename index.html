@@ -122,12 +122,61 @@
             margin: 0 10px;
             font-size: 1.5em;
         }
+        .hamburger {
+            display: none;
+        }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 0 20px; /* Reduced padding */
+            }
+            .hero h1 {
+                font-size: 2.5em; /* Smaller font size */
+                left: 20px;
+            }
+            .content {
+                padding: 20px; /* Reduced padding */
+            }
+            header {
+                padding: 10px 20px; /* Reduced padding */
+                flex-direction: column; /* Stack logo and nav */
+            }
+            header img {
+                width: 80px; /* Smaller logo */
+            }
+            nav {
+                display: none; /* Hide default nav */
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+            nav.active {
+                display: flex; /* Show nav when active */
+            }
+            nav a {
+                margin: 10px 0;
+                display: block;
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon */
+                cursor: pointer;
+                color: #FFFFFF; /* Make it white */
+                font-size: 1.5em;
+                position: absolute; /* Position relative to the header */
+                top: 50%; /* Center vertically */
+                right: 20px; /* Keep it on the right */
+                transform: translateY(-50%); /* Adjust for true vertical centering */
+                width: auto;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <img src="logo.jpg" alt="Rust in Surf Bali Logo">
+    <i class="fas fa-bars hamburger"></i>
     <nav>
         <a href="#about">About</a>
         <a href="#courses">Courses</a>
@@ -178,6 +227,13 @@
             header.classList.remove("scrolled");
         }
     };
+
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
 </script>
 
 </body>
