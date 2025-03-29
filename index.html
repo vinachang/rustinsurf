@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust in Surf Bali</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F5F5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px #000000;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            position: absolute;
+            bottom: 20px;
+            left: 100px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 100px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            background-color: rgba(128, 128, 128, 0.8);
+            z-index: 100;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+        }
+        header.scrolled {
+            background-color: rgba(78, 52, 46, 0.8);
+            padding: 10px 100px;
+        }
+        header img {
+            width: 100px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: #FFFFFF;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .content {
+            padding: 40px 100px;
+            text-align: center;
+            color: #4E342E;
+        }
+        .content h2 {
+            color: #8D6E63;
+        }
+        .cta-button {
+            background-color: #D7CCC8;
+            color: #4E342E;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: url('whatsapp-icon.png');
+            background-size: cover;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .testimonials {
+            background-color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            color: #4E342E;
+        }
+        .testimonial {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #4E342E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px;
+        }
+        footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: #FFFFFF;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="Rust in Surf Bali Logo">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Ride the Waves of Freedom</h1>
+</div>
+
+<div class="content">
+    <h2>Discover the Joy of Surfing in Bali</h2>
+    <p>Experience the thrill of Bali surfing with our expert coaching. At Rust in Surf Bali, we offer personalized surf lessons that cater to all levels, from beginner to advanced. Our experienced instructors will guide you through the best surf spots, including the famous Kuta Reef, ensuring you have the optimal conditions for learning and progression.</p>
+    <p>Our Bali surf lessons are designed to provide you with the best experience and the greatest improvement. Whether you're eager to catch your first wave, refine your skills, or master advanced techniques, our lessons are tailored to help you achieve your surfing goals. Embrace the vibrant Bali vibe and enjoy the stunning ocean views as you ride the waves.</p>
+    <p>Join us for an unforgettable Bali surf adventure. Our lessons are not just about learning to surf; they're about connecting with the ocean and experiencing the freedom and joy that surfing brings. Book your Bali surf beginner, intermediate, or advanced lesson today and start your journey with us.</p>
+    <a href="#booking" class="cta-button">Book Your Adventure</a>
+</div>
+
+<div class="testimonials">
+    <h2>What Our Surfers Say</h2>
+    <div class="testimonial">
+        <p>"An amazing experience! The instructors are top-notch and the vibe is incredible. Can't wait to come back!"</p>
+        <p>- Alex, USA</p>
+    </div>
+    <div class="testimonial">
+        <p>"I learned so much and had a blast. The perfect place to start my surfing journey!"</p>
+        <p>- Mia, Australia</p>
+    </div>
+</div>
+
+<a href="https://wa.me/6282247714817" class="whatsapp-button"></a>
+
+<footer>
+    <p>Find us on</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/rustinsurf" class="fab fa-instagram"></a>
+        <a href="https://www.facebook.com/share/1BoZdEH5PA/?mibextid=wwXIfr" class="fab fa-facebook"></a>
+    </div>
+</footer>
+
+<script>
+    window.onscroll = function() {
+        var header = document.querySelector("header");
+        if (window.pageYOffset > 0) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    };
+</script>
+
+</body>
+</html>
